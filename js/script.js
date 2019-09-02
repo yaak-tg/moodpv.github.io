@@ -33,7 +33,7 @@ controls = new THREE.OrbitControls( camera, renderer.domElement);
 // creates the shape
 var geometry = new THREE.CubeGeometry( 250, 250, 250 );
 var cubeMaterials = [
-    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( "img/tst_ft.gif" ), side: THREE.DoubleSide }), //front side
+    new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/tst_ft.gif' ), side: THREE.DoubleSide }), //front side
     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/pv_bk.png' ), side: THREE.DoubleSide }), //back side
     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/pv_up.png' ), side: THREE.DoubleSide }), //up side
     new THREE.MeshBasicMaterial({ map: new THREE.TextureLoader().load( 'img/pv_dn.png' ), side: THREE.DoubleSide }), //down side
