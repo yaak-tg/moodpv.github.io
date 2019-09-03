@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<!-- Mirrored from photomosh.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Jun 2019 23:41:12 GMT -->
+<head>
+		<title>PHOTOMOSH</title>
+		<meta
+			name="description"
+			content="Glitch images, videos or webcam using WebGL effects. Save output as image, gif or video."
+		/>
+		<meta name="author" content="Airtight Interactive Inc." />
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+		/>
+		<link href="../fonts.googleapis.com/css7b4f.css?family=Roboto" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div id="debug-text">DEBUG</div>
+
+		<div id="drop-target-holder">
+			<div id="drop-target" class="option dashed v-centered h-centered">
+				Drop File Here
+			</div>
+		</div>
+
+		<div id="viz">
+			<div id="save-options">
+				<div id="opt-jpg" class="save-opt-inner selected">JPG</div>
+				<div id="opt-gif" class="save-opt-inner">GIF</div>
+				<div id="opt-webm" class="save-opt-inner">WEBM</div>
+			</div>
+
+			<div id="webgl">
+				<div id="progress-bar"></div>
+				<div id="progress-bar-bkgnd"></div>
+			</div>
+
+			<div id="bottom-controls-holder">
+				<div class="option clickable icon-btn" id="btn-mosh">
+					Mosh
+				</div>
+				<div class="option clickable icon-btn" id="btn-record">
+					Save
+				</div>
+			</div>
+		</div>
+
+		<div id="intro">
+			<div id="intro-logo" class="logo h-centered"></div>
+			<div id="sub-head" class="big">Glitch yo' self.</div>
+			<div id="options-holder">
+				<div id="input-options" class="v-centered">
+					<div class="option clickable" id="option-file">
+						Load File
+					</div>
+					<div class="middle-sep">OR</div>
+					<div class="option clickable" id="option-cam">
+						Use WebCam
+					</div>
+				</div>
+
+				<div id="cam-prompt" class="v-centered big">
+					Please allow WebCam access.
+				</div>
+
+				<div id="file-prompt" class="v-centered">
+					<div class="option clickable" id="option-choose">
+						Choose File...
+					</div>
+					<div class="middle-sep">OR</div>
+					<div class="option dashed">
+						Drop File Here
+					</div>
+					<input type="file" id="file1" style="display:none" />
+				</div>
+			</div>
+
+			<p><a href="help/index.html" target="_blank">HELP (?)</a></p>
+
+			<p><br />© 2018 <a href="http://airtight.cc/">Airtight</a></p>
+
+			<div class="hello">
+				<a href="https://www.instagram.com/explore/tags/photomosh/" target="_blank"
+					><span id="insta" class="social-icon"></span
+				></a>
+				<a href="https://twitter.com/photomosh" target="_blank"><span id="twitter" class="social-icon"></span></a>
+				<a href="mailto:mosh@airtightinteractive.com"><span id="mail" class="social-icon"></span></a>
+			</div>
+		</div>
+
+		<div id="controls-holder">
+			<div id="controls-header">
+				<a href=".html"><div class="logo smaller h-centered"></div></a>
+			</div>
+			<div id="help-link"><a href="help/index.html" target="_blank">HELP (?)</a></div>
+			<div id="controls">
+				<div id="settings"></div>
+			</div>
+		</div>
+
+		<script src="js/lib.js"></script>
+		<script src="js/main.js"></script>
+
+		<script>
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				(i[r] =
+					i[r] ||
+					function() {
+						(i[r].q = i[r].q || []).push(arguments);
+					}),
+					(i[r].l = 1 * new Date());
+				(a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m);
+			})(window, document, 'script', '../www.google-analytics.com/analytics.js', 'ga');
+			ga('create', 'UA-249692-24', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</body>
+
+<!-- Mirrored from photomosh.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 18 Jun 2019 23:41:14 GMT -->
+</html>

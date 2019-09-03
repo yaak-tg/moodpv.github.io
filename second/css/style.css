@@ -1,0 +1,393 @@
+body {
+	background-color: #000;
+	margin: 0;
+	overflow: hidden;
+	color: #fff;
+	font-family: 'Roboto', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	padding:0;
+	height:100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+a{
+	color: #fff;
+	text-decoration: none;	
+	border-bottom:thin solid #999;			
+}
+
+#viz {
+	position:absolute;
+	background-color: #000;
+	width: calc(100% - 262px);
+	height:100%;
+}
+
+#webgl{
+	position: absolute;
+	display:none;
+	-webkit-transform-origin: 0 0 0;
+		-ms-transform-origin: 0 0 0;
+			transform-origin: 0 0 0;
+}
+
+.logo{
+	width:250px;
+	height:140px;
+	background-image: url('../res/img/logo-250.jpg');
+}
+
+.smaller{
+	background-image: url('../res/img/logo-40.png');
+	width:189px;
+	height:40px;
+}
+
+/* CONTROLS */
+#controls-holder{
+	position:absolute;
+	top: 0px;
+	right:0px;
+	height: 100%;
+	width:262px;
+	overflow-y:scroll;
+	overflow-x: hidden;
+	display:none;
+	border-left: 1px solid #333;
+}
+
+#controls{
+	position:absolute;
+	width:250px;
+	height:100%;
+}
+
+#controls-header{
+	height: 41px;
+	border-bottom: 1px solid #333;
+	background-color: #000;
+	font-weight: bold;
+}
+
+#debug-text{
+	position: absolute;
+	top:0;
+	left:0;
+	font-size: 14px;
+	color: #0F0;
+	width:600px;
+	background-color: #030;
+	z-index: 999;
+	display:none;
+}
+
+#settings{
+	border-top: 1px solid #333;
+}
+
+.dg {
+	font-family: 'Roboto', sans-serif !important;
+}
+
+#bottom-controls-holder{
+	position:absolute;
+	width:500px;
+	height:60px;
+	bottom:30px;
+	padding: 5px 20px;
+	text-align: center;
+	cursor:default;
+	left:50%;
+	margin-left:-250px;
+	display:none;
+	z-index: 99;
+}
+
+/* INTRO */
+
+#intro {
+	width:520px;
+	height:360px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-180px 0 0 -260px;
+	padding: 5px 10px;
+	text-align: center;
+	cursor:default;
+	opacity:0;
+	line-height: 150%;
+	font-size: 16px;
+	xborder: 1px solid pink;
+}
+
+#intro h2,.big{
+	font-size: 21px;
+	padding:20px;
+	letter-spacing: 1px;
+	line-height: 150%;
+}
+
+#options-holder{
+	height: 70px;
+}
+
+#cam-prompt{
+	visibility:hidden;
+}
+
+#file-prompt{
+	visibility:hidden;
+}
+
+.v-centered{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+
+.h-centered{
+	margin: 0 auto;
+}
+
+#intro .option{
+	display: inline-block;
+	width: 170px;
+	font-size: 17px;
+	padding:15px 0;
+	margin:0 5px 0 5px;
+}
+
+#bottom-controls-holder .option{
+	display: inline-block;
+	width: 140px;
+	font-size: 17px;
+	padding:12px 0;
+	margin:0 5px 0 5px;
+}
+
+#bottom-controls-holder .option{
+	margin:0 20px 0 20px;
+}
+
+#intro .middle-sep{
+	display: inline-block;
+	width: 70px;
+}
+
+.dashed{
+	border: 2px dashed #fff;
+	border-radius: 10px;
+}
+
+.clickable{
+	cursor: pointer;
+	background-color: rgba(255,255,255,0.15);
+}
+
+.clickable:hover{
+  background-color: rgba(255,255,255,0.20);
+ }
+
+.clickable:active{
+  background-color: rgba(255,255,255,0.35);
+ }
+
+.icon-btn:before{
+	content:  "\0000a0";
+	display: inline-block;
+	height: 24px;
+	width: 24px;
+	line-height: 24px;
+	margin: 0 4px -6px -4px;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	background-size: 100% 100%;
+}
+
+#btn-mosh:before{
+   background: url(../res/img/mosh.png) no-repeat left center transparent;
+}
+
+#btn-help:before{
+   background: url(../res/img/help.png) no-repeat left center transparent;
+}
+
+#btn-record:before{
+   background: url(../res/img/save.png) no-repeat left center transparent;
+}
+
+/* #option-cam:before{
+	background: url(../res/img/camera.svg) no-repeat left center transparent;
+}
+
+#option-file:before{
+	background: url(../res/img/image-inverted.svg) no-repeat left center transparent;
+} */
+
+#btn-record.vid-mode:before{
+   background: url(../res/img/video.png) no-repeat left center transparent;
+}
+
+#btn-record.recording:before{
+	display:none;
+ }
+
+#progress-bar{
+	position:absolute;
+	width:100%;
+	height:10px;
+	background-color:#e00;
+	z-index: 9992;
+	bottom:0px;
+	display: none;
+	-webkit-transform-origin: 0 0 0;
+		-ms-transform-origin: 0 0 0;
+			transform-origin: 0 0 0;
+}
+
+#progress-bar-bkgnd{
+	position:absolute;
+	width:100%;
+	height:10px;
+	background-color:#300;
+	z-index: 9991;
+	bottom:0px;
+	display: none;
+	-webkit-transform-origin: 0 0 0;
+		-ms-transform-origin: 0 0 0;
+			transform-origin: 0 0 0;
+}
+
+/* VIDEO TOGGLE */
+
+#save-options{
+	position:absolute;
+	top: 20px;
+	left:20px;
+	width:210px;
+	height:36px;
+	background-color: rgba(255,255,255,0.15);
+	border-radius: 10px;
+	overflow: hidden;
+	cursor:pointer;
+	display:none;
+	z-index: 3;
+}
+
+.save-opt-inner{
+	width:70px;
+	height:36px;
+	float: left;
+	border-left: solid rgba(255,255,255,0.2) 1px;
+	background-repeat: no-repeat;
+	background-position:center center;
+	text-align: center;
+	line-height: 36px;
+	color:  rgba(255,255,255,0.5);
+}
+
+.save-opt-inner.selected {
+	background-color: rgba(255,255,255,0.25);	
+	color: #FFF;
+}
+
+#opt-jpg{
+	border-left: none;
+}
+
+#drop-target-holder {
+	position:absolute;
+	background-color: rgb(0, 0, 0);
+	width: 100%;
+	height:100%;
+	z-index: 999;
+	display: none;
+	pointer-events: none;
+}
+
+#drop-target {
+	width: 300px;
+	height: 100px;
+	font-size: 24px;
+	text-align: center;
+	line-height: 100px;
+	pointer-events: none;
+}
+
+#help-link{
+	left: 30px;
+	font-size: 12px;
+	height: 30px;
+	text-align: left;
+	line-height: 30px;
+	text-align: center;
+}
+
+#drop-prompt{
+	display:none;
+}
+
+/*social icons*/
+
+.hello{
+	clear: both;
+	width: 182px;
+	height: 40px;
+	margin: 40px auto ;
+}
+
+.social-icon{
+	height: 40px;
+	width: 40px;
+	float: left;
+	opacity:0.5;
+	margin:0 10px;
+}
+
+.social-icon:hover{
+	opacity:0.8;
+}
+
+#mail{
+	background-image: url(../res/img/mail-with-circle.svg);
+}
+
+#twitter{
+	background-image: url(../res/img/twitter-with-circle.svg);
+}
+
+#insta{
+	background-image: url(../res/img/instagram-with-circle.svg);
+}
+
+
+/* MEEDJA QUERIES */
+/* for smaller than an ipad (portrait or landscape), hide CP and shrink stuff */
+
+@media (max-width: 700px) {
+
+	#intro, #bottom-controls-holder{
+		transform: scale(0.8);
+		-ms-transform: scale(0.8);
+		-webkit-transform: scale(0.8);
+	}
+
+	#viz {
+		width:100%;
+	}
+
+	#controls-holder{
+		visibility: hidden;
+	}
+
+}
